@@ -837,7 +837,7 @@
 		var $link = $( link ),
 
 			//get href, if defined, otherwise fall to null #
-			href = $link.attr( "href" ) || "#",
+			href = $link.attr( "href" ) || $link.attr( "link" ) ||  "#",
 
 			//cache a check for whether the link had a protocol
 			//if this is true and the link was same domain, we won't want

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, height=device-height, minimum-scale=1, maximum-scale=1">
 	<title>jQuery Mobile: Demos and Documentation</title>
 	<link rel="stylesheet"  href="themes/default/" />
 	<link rel="stylesheet" href="docs/_assets/css/jqm-docs.css" />
@@ -10,6 +10,24 @@
 	<script src="js/"></script>
 	<script src="experiments/themeswitcher/jquery.mobile.themeswitcher.js"></script>
 	<script src="docs/_assets/js/jqm-docs.js"></script>
+	<script>
+  		$('div').live('pagecreate',function(event) {
+  			$('a[href]', this).each(function() {
+  				var self = $(this);
+  				self.attr('link', self.attr('href'));
+  				self.removeAttr('href');				
+  			});
+  		});
+  		
+  		var changeViewport = function () {
+          if (window.orientation == 90 || window.orientation == 270)
+              $('meta[name="viewport"]').attr('content', 'height=device-width,width=device-height,initial-scale=1.0,maximum-scale=1.0');
+          else
+              $('meta[name="viewport"]').attr('content', 'height=device-height,width=device-width,initial-scale=1.0,maximum-scale=1.0');
+      }
+      window.addEventListener('orientationchange', changeViewport, true);
+      try { changeViewport(); } catch (err) { }
+  	</script>
 </head> 
 <body> 
 <div data-role="page" data-theme="b" id="jqm-home">
