@@ -1,3 +1,12 @@
+This fork
+=====
+Prevents the address bar from dropping down on page changes on iOS, based on the discussion here:
+
+http://forum.jquery.com/topic/stopping-the-url-bar-from-dropping-down-i-discovered-a-workaround#14737000002133864
+
+Thanks to cameronbraid and dimitryz.
+
+
 jQuery Mobile Framework
 =====
 http://jquerymobile.com
